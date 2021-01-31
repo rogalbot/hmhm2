@@ -16,7 +16,7 @@
   <body>
   <p>Michal 1</p>
    <div class="mypanel" id="ad">
-       Something
+       Something else
    </div>
    <div id="here">
        
@@ -55,7 +55,7 @@ fetch('https://www.json-generator.com/api/json/get/cfhkmtyUSW?indent=2')
     .then(() =>{
       var x = document.getElementById("some");
     console.log(obj);
-    x.innerHTML = obj[0].name;  
+    x.innerHTML = obj[0].name + obj[0].id;  
     var elem = document.createElement("img");
     console.log(obj[0].img);
     elem.setAttribute("src", obj[0].img);
