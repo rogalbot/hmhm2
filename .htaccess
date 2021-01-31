@@ -1,0 +1,6 @@
+#Redirect to https
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^moje\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://moje.com/$1​ [R,L]
