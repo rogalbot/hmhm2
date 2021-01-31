@@ -57,9 +57,9 @@ fetch('https://www.json-generator.com/api/json/get/cfhkmtyUSW?indent=2')
     console.log(obj);
     x.innerHTML = obj[0].name;  
     var elem = document.createElement("img");
-    elem.setAttribute("crossorigin","");
+    console.log(obj[0].img);
     elem.setAttribute("src", obj[0].img);
-    document.getElementById("placehere").appendChild(elem);
+    document.getElementById("here").appendChild(elem);
           });
     
    
