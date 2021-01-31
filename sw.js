@@ -54,3 +54,27 @@ async function networkAndCache(req){
     }
 }
 
+self.addEventListener('fetch', function(event){
+    let requestURL = new URL(event.request.url);
+    
+    if(requestURL.origin == location.origin){
+        event.respondWith(
+        fetch(event.request).catch(function(){
+            return caches.match(event.request);
+        }))
+    }else{
+        event.respondWith(
+        caches.open('imageCache').then(function(cache){
+            return cache.match(event.request).then(function(response){
+            let fetchPromise = fetch(event.request).then(function(networkResponse){
+                cache.put(event.request, networkResponse.clone());
+                return networkResponse;
+            })
+            return response || fetchPromise;
+            })
+        })
+        )
+    }
+    
+})
+
