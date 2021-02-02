@@ -35,8 +35,30 @@
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" id="some">
+      <div class="modal-body tut" id="some">
         
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  Launch demo modal2
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title2</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body tut">
+        dsa
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -60,6 +82,11 @@ fetch('https://www.json-generator.com/api/json/get/cfhkmtyUSW?indent=2')
     console.log(obj[0].img);
     elem.setAttribute("src", obj[0].img);
     document.getElementById("here").appendChild(elem);
+    var elems= document.getElementsByClassName("tut");
+    var i;
+    for (i=0; i<elems.length;i++){
+        elems[i].innerHTML=obj[i].name+"coos"+obj[i].id;
+    }
           });
     
    
