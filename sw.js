@@ -6,7 +6,7 @@ const staticAssets= [
     './src/index.js',
     './images/Czesiek.png',
     './manifest.webmanifest',
-    'https://www.json-generator.com/api/json/get/cfhkmtyUSW?indent=2'
+    'https://www.json-generator.com/api/json/get/cfphqxIAte?indent=2'
 ]
 self.addEventListener("install", async e =>{
     const cache = await caches.open(cacheName);
