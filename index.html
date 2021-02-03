@@ -397,7 +397,7 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script>
 
-fetch('https://www.json-generator.com/api/json/get/cgqkhNemTC?indent=2')
+fetch('https://www.json-generator.com/api/json/get/bVKosksOSq?indent=2')
     .then(res => res.json())
     .then(data => obj = data)
     .then(() =>{
@@ -416,14 +416,16 @@ fetch('https://www.json-generator.com/api/json/get/cgqkhNemTC?indent=2')
     var elemsName2 = document.getElementsByClassName("jname2");
     var elemsJdate = document.getElementsByClassName("jdate");
     var elemsJdetails = document.getElementsByClassName("jdetails");
-    var tmpstr=""
+    var tmpstr="";
+    var tmpstr2="";
     for(var i=0;i<obj.length;i++)
     {
     elemsImg[i].setAttribute("src",obj[i].img);
     elemsName[i].innerHTML=obj[i].name;
     elemsName2[i].innerHTML=obj[i].name;
     tmpstr=elemsJdate[i].innerHTML;
-    tmpstr="<p><b> Data: </b>"+obj[i].date+"<p><b>Godzina: </b>"+obj[i].hour+"<p><b>Krótki opis: </b>"+obj[i].short_desc+tmpstr;
+    tmpstr2="<img class=\"card-img-top border\" src=\""+obj[i].img+"\" alt=\"Card image cap\">";
+    tmpstr=tmpstr2+"<p><b> Data: </b>"+obj[i].date+"<p><b>Godzina: </b>"+obj[i].hour+"<p><b>Krótki opis: </b>"+obj[i].short_desc+tmpstr;
     elemsJdate[i].innerHTML=tmpstr;
     elemsJdetails[i].innerHTML="<p><b>Ważne: </b>"+obj[i].details.wazne+"<p><b>Powtarzalne: </b>"+obj[i].details.powtarzalne+"<p><b>Powiadomienia: </b>"+obj[i].details.powiadomienia+"<p><b>Typ: </b>"+obj[i].details.type+"<p><b>Opis: </b>"+obj[i].details.desc;
 
